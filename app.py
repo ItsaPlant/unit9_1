@@ -16,13 +16,15 @@ def calculator():
     if request.method=="GET":
         return render_template("calc.html")
     elif request.method=="POST":
-        cur_1=request.form.get("cur_1")
-        quant=request.form.get('quant')
+        cur=request.form.get("cur")
+        quant=float(request.form.get('quant'))
 
-        #cur_1=data.get(cur_1)
+        val=float(data.get(cur))
 
-        cost = cur_1 * quant
+        cost = val * quant
 
         return render_template("calc_result.html", cost=cost)
         
 
+if __name__ == "__main__":
+    app.run(debug=False)

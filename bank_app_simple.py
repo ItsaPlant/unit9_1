@@ -4,7 +4,7 @@ raw_data=[{"table":"C","no":"130/C/NBP/2021","tradingDate":"2021-07-07","effecti
 
 rates = raw_data[0]['rates']
 
-with open("D:\PRYWATNE\JEZYKI\Python\unit9\unit9_1\bank_quest_simple.csv", '', newline='') as csvfile:
+with open("bank_quest_simple.csv", 'w', newline='') as csvfile:
     tablewriter=csv.writer(csvfile, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     tablewriter.writerow(rates[0].keys())
 
